@@ -1,15 +1,17 @@
-type GameCallback = (currentTime: number, gamepad: Gamepad | null) => void
+import { Control } from "../control"
 
-interface GameAnimation {
+type ControlCallback = (currentTime: number, gamepad: Gamepad | null) => void
+
+export interface ControlAnimation {
   animation: number
   cancel(): void
 }
 
-export class GamepadControl {
-  #animations: GameAnimation[] = []
+export class GamepadControl implements Control {
+  #animations: ControlAnimation[] = []
 
-  #onGamepads: GameCallback[] = []
-  set onGamepad(cb: GameCallback) {
+  #onGamepads: ControlCallback[] = []
+  set onGamepad(cb: ControlCallback) {
     this.#onGamepads.push(cb)
   }
 

@@ -1,4 +1,4 @@
-export abstract class ButtonsHandler<T> {
-  abstract handle(value: T[]): boolean[]
+export abstract class ButtonsHandler<T = unknown> {
+  abstract handle(value: readonly T[]): boolean[]
   abstract isActive(value: T): boolean
 }

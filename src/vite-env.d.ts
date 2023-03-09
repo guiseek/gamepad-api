@@ -1,5 +1,8 @@
 /// <reference types="vite/client" />
 
+/**
+ * Player
+ */
 interface Position {
   x: number
   y: number

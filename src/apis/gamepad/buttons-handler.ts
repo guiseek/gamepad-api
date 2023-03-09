@@ -1,5 +1,4 @@
 import {ButtonsHandler} from '../buttons-handler'
-import {buttonActive} from './button-active'
 
 type InputButtonsHandle = GamepadButton
 
@@ -10,12 +9,12 @@ export class GamepadButtonsHandler
     const [X, A, B, Y, L, R] = buttons
 
     return [
-      buttonActive(X),
-      buttonActive(A),
-      buttonActive(B),
-      buttonActive(Y),
-      buttonActive(L),
-      buttonActive(R),
+      this.isActive(X),
+      this.isActive(A),
+      this.isActive(B),
+      this.isActive(Y),
+      this.isActive(L),
+      this.isActive(R),
     ]
   }
 
